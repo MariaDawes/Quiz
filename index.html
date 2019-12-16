@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Quiz</title>
-  
-  
+
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -30,23 +30,55 @@
   <link rel="stylesheet" href="./style.css">
 
 </head>
-<!-- End Head-->
+
 
 
 <!-- Body -->
 
 <body>
-  <br>
-  <h1>Quiz</h1>
-  <br>
-  <br>
-  <br>
-  
-  
-  
-   
-<script src="./script.js"></script>
 
+
+ 
+  <div id="start-page" class="container">
+        <h1>Coding Quiz Challenge</h1>
+        <hr>
+        <br>
+            <div class="container2">
+            <h5>Try to answer the following code related questions within the time limit of 75 seconds. Keep in mind that incorrect answers will decrease your score/time."        
+              </h5>
+            </div>
+         <br>
+         <br>
+         <button id="start">Start</button>
+  </div>
+  
+  <div id="myQuestions" class="hide">
+    <h4 id="questions"></h4>
+      <div id="answers" class="answers">
+        <button id="a1"><h6</button>
+        <button id="a2"><h6</button> 
+        <button id="a3"><h6</button>
+        <button id="a4"><h6</button>
+      </div>
+  </div>
+  
+
+  <div id="Score" class="hide">
+    <h2>All done!!!</h2>
+        <p><strong>Your final score:</strong> <span id="thescore"></span></p>
+        <input placeholder="initials" id="ini" />
+        <button id="submit">Submit</button>
+  </div>
+
+  <div id="highScore" class="hide">
+    <h2>Higher Score</h2>
+        <p><span id="thescore"></span></p>
+        <button id="submit">Submit</button>
+  </div> 
+  
+
+  
+
+  <script src="./script.js"></script>
 </body>
-<!-- End body -->
 </html>
