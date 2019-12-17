@@ -1,25 +1,16 @@
 
 var startPageEl = document.getElementById("start-page");
-var startButton = document.getElementById("start");
-var questions = document.getElementById("myQuestions");
-
-//Clean page title
-function beginQuiz(){
-    var startPageEl = document.getElementById("start-page");
-    startPageEl.setAttribute("class", "hide");
-    questions.removeAttribute("class");
-    //set timer
-}
-
-startButton.onclick = beginQuiz; 
-
-// ------------------------------------------------
-
-
-// Pages with questions 
-
-
-var Repository = [
+var startButtonEl = document.getElementById("start");
+var questionsEl = document.getElementById("questions");
+var myquestEl = document.getElementById("Myquestions");
+var scoreEl = document.getElementById("scores")
+var timerTimer;
+var timerEl = document.getElementById("thetime");
+var time = 75;
+var currentQuestion = 0;
+var answersEl = document.getElementById("answers");
+var rorwEl = document.getElementById("rightorwrong");
+var repository = [
     {
     title: "Commonly used data types DO NOT include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
@@ -46,88 +37,144 @@ var Repository = [
     answer: "console.log"
     }
     ]
-  
-  
-var oneA = document.getElementById("a1");
-var twoA = document.getElementById("a2");
-var threeA = document.getElementById("a3");
-var fourA = document.getElementById("a4");
-var correctCount = 0
+
  
+function beginQuiz(){
+                                                    console.log("inside begin quiz function22222");
+    var startPageEl = document.getElementById("start-page");
+    startPageEl.setAttribute("class", "hide");
+    questionsEl.removeAttribute("class");
+    timerTimer = setInterval(clockTick, 1000);
+    timerEl.textContent = time;
+    
+//startPageEl.setAttribute("style", "display: none");
+//startPageEl.setAttribute("style", "display: block");
+}    
+                                                    console.log("before begin quiz function11111");
+//startButton.addEventListener("click", beginQuiz);
+//startButtonEl.addEventListener("click", function()) {
+ // startPageEl.setAttribute("style", "oppacity: 0")  
+//}
 
-for (var i = 0; i < 5; i++){
-        
-    questions = Repository.title;
-       
-    oneA = Repository.choices[1];
-    twoA = Repository.choices[2];
-    threeA = Repository.choices[3];
-    fourA = Repository.choices[4];
-        
-    console.log(questions);
-    console.log(oneA);
-    console.log(twoA);
-    console.log(threeA);
-    console.log(fourA);
 
-    var Arepo = "noanswer";
+startButtonEl.onclick = function() {beginQuiz()}; 
 
-    If (oneA.onclick){
-        var Arepo = OneA;
-    } 
-    if (twoA.onclick){
-    var Arepo = TwoA;
-    }
-    if (threeA.onclick){
-    var Arepo = ThreeA;
-    }
-    if (fourA.onclick){
-    var Arepo = FourA;  
-    }
 
-    if (Arepo = Repository.answer){
-        // display correct
-        correctCount ++
-    }
-    else {
-        //display incorrect
-        correctCount --
-    }
-
-  //Clean page 
-    var questions = document.getElementById("myQuestions");
-    questions.setAttribute("class", "hide");
-    questions.removeAttribute("class");
-
+function clockTick(){
+    console.log("time ..........................");
+time--;
+timerEl.textContent = time;
+if (time <= 0){
+    // function finalize() Add end of game tasks endof game function - call the funcion 
+}
 }
 
 
-//display ScoreE1 near the html "my final score"
+function getQuestions(){  
+
+                                                    console.log("im in get question function");
+    var a = 0;
+    var b = 0;
+    var userAnswer = "noanswer";
+    var correctCount = 0;
+    var rightAnswer = "t";
+    var correctCount = 0;
+    var msg = "."
+
+    var test = repository[1].title
+    console.log("test =",test);
+
+    for (var i = 0; i < repository.lenght; i++){
+            
+        var tempQuestion = repository[i].title;
+        questionsEl.textContent = tempQuestion;
+
+        var rightAnswer = repository[i].answer;
+    
+                                                        console.log("Questions:", questionsEl);
+                                                        console.log("the Answer:", theAnswer);
+
+        //Add objects to array
+        for (var a = 0; a < choices.lenght; a++){   
+        
+            OneArray[a] = repository[i].choices[a];
+                                                        console.log("OneArray", OneArray[a]);
+        }    
+    
+                                                        console.log(OneArray[0]);
+                                                        console.log(OneArray[1]);
+                                                        console.log(OneArray[2]);
+                                                        console.log(OneArray[3]);
+
+            
+        //add buttons for every object in array
+        OneArray.forEach( function(v) { 
+            var button= document.createElement('button');
+            button.type= 'button';
+            button.appendChild(document.createTextNode(v.tooltip));
+            button.setAttribute('onClick',v.press);
+            document.getElementById("buttons").appendChild(button);
+        } );
+
+        if (button === rightAnswer){
+            correctCount++;
+            msg = "Correct!!!";
+        } 
+        else{
+            correctCount--;
+            msg = "Wrong!!!";
+        }
+        rorwEl.textContent = msg
+        
+
+
+        //clean screen 
+        myquestEl.setAttribute("class", "hide");
+        scoreEl.removeAttribute("class");
+        
+    }    
+}
+        
+getQuestions();
+
+        
+    //Clean page 
+    
+    
+
+    //     var questionsEl = document.getElementById("myQuestions");
+    //     questionsEl.setAttribute("class", "hide");
+    //     questionsEl.removeAttribute("class");
+
+    
+
+
+    //display ScoreE1 near the html "my final score"
 
 
 
 
-// Page - All done!!!
+//     // Page - All done!!!
 
 
-// Clean page with questions 
+//     // Clean page with questions 
 
-var startPage3 = document.getElementById("score");
-var questions = document.getElementById("myQuestions");
-questions.setAttribute("class", "hide");
-startPage3.removeAttribute("class");
+//     var startPage3 = document.getElementById("score");
+//     var questions = document.getElementById("myQuestions");
+//     questionsEl.setAttribute("class", "hide");
+//     startPage3.removeAttribute("class");
 
-//display ScoreE1 near the html "my final score"
-var ScoreEl = document.getElementById("thescore");
+// //display ScoreE1 near the html "my final score"
+// var ScoreEl = document.getElementById("thescore");
 
 
-// Page Higher Score
+// // Page Higher Score
 
-// Clean page " All done!"
-var startPage3 = document.getElementById("score");
-var questions = document.getElementById("myQuestions");
-questions.setAttribute("class", "hide");
-startPage3.removeAttribute("class");
+// // Clean page " All done!"
+// var startPage3 = document.getElementById("score");
+// var questionsEl = document.getElementById("myQuestions");
+// questionsEl.setAttribute("class", "hide");
+// startPage3.removeAttribute("class");
 
 
 

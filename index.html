@@ -10,6 +10,10 @@
   <title>Quiz</title>
 
 
+ <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -37,8 +41,6 @@
 
 <body>
 
-
- 
   <div id="start-page" class="container">
         <h1>Coding Quiz Challenge</h1>
         <hr>
@@ -52,31 +54,36 @@
          <button id="start">Start</button>
   </div>
   
-  <div id="myQuestions" class="hide">
+ <div id="myQuestions" class="hide"> 
     <h4 id="questions"></h4>
       <div id="answers" class="answers">
-        <button id="a1"><h6</button>
-        <button id="a2"><h6</button> 
-        <button id="a3"><h6</button>
-        <button id="a4"><h6</button>
+        <button id="buttons"><h6</button>
       </div>
-  </div>
+      <br>
+      <br>
+      <hr>
+    <h5 id="rightorwrong">></h5>  
+    </div>
   
 
-  <div id="Score" class="hide">
+  <div id="score" class="hide">
     <h2>All done!!!</h2>
-        <p><strong>Your final score:</strong> <span id="thescore"></span></p>
+        <p><strong>Your final score:</strong> <span id="thescore1"></span></p>
         <input placeholder="initials" id="ini" />
         <button id="submit">Submit</button>
   </div>
 
   <div id="highScore" class="hide">
     <h2>Higher Score</h2>
-        <p><span id="thescore"></span></p>
-        <button id="submit">Submit</button>
+        <p><span id="thescore2"></span></p>
+        <button id="goBack">Go Back</button>
+        <button id="Clear">Clear</button>
+
   </div> 
   
-
+  <div id="timer" class="">
+        <p>Time: <span id="thetime">0</span></p>
+  </div> 
   
 
   <script src="./script.js"></script>
