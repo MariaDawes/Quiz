@@ -39,7 +39,7 @@ var repository = [
 
  
 function beginQuiz(){
-                                                    console.log("inside begin quiz function22222");
+                                                    console.log("inside begin quiz function");
     var startPageEl = document.getElementById("start-page");
     startPageEl.setAttribute("class", "hide");
     questionsEl.removeAttribute("class");
@@ -49,11 +49,8 @@ function beginQuiz(){
 //startPageEl.setAttribute("style", "display: none");
 //startPageEl.setAttribute("style", "display: block");
 }    
-                                                    console.log("before begin quiz function11111");
-//startButton.addEventListener("click", beginQuiz);
-//startButtonEl.addEventListener("click", function()) {
- // startPageEl.setAttribute("style", "oppacity: 0")  
-//}
+                                                    
+
 
 
 startButtonEl.onclick = function() {beginQuiz()}; 
