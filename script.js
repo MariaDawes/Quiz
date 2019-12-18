@@ -1,4 +1,3 @@
-
 var startPageEl = document.getElementById("start-page");
 var startButtonEl = document.getElementById("start");
 var questionsEl = document.getElementById("questions");
